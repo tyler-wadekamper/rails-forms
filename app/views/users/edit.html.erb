@@ -1,0 +1,15 @@
+<h1>Edit User</h1>
+<%= @user.errors.full_messages%>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label 'Username: ' %>
+  <%= form.text_field :username %>
+
+  <%= form.label 'Email: ' %>
+  <%= form.email_field :email %>
+
+  <%= form.label 'Password: ' %>
+  <%= form.password_field :password %>
+
+  <%= form.submit %>
+<% end %>

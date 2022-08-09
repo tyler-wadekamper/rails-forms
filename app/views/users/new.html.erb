@@ -1,0 +1,29 @@
+<h1>New User</h1>
+<%= @user.errors.full_messages%>
+
+<%# <form action="/users" method="post" accept-charset="UTF-8">
+
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="user[username]">
+
+  <label for="email">Email:</label>
+  <input type="text" id="email" name="user[email]">
+
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="user[password]">
+
+  <input type="submit" value="Submit">
+</form> %>
+
+<%= form_with model: @user do |form| %>
+  <%= form.label 'Username: ' %>
+  <%= form.text_field :username %>
+
+  <%= form.label 'Email: ' %>
+  <%= form.email_field :email %>
+
+  <%= form.label 'Password: ' %>
+  <%= form.password_field :password %>
+
+  <%= form.submit %>
+<% end %>
